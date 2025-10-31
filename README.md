@@ -25,7 +25,7 @@ Software Engineering lab for static code analysis using tools like pylint, bandi
 - After fixing all the issues in the [cleaned_inventory_system.py](./src/cleaned_inventory_system.py),
 these 3 tools report no errors. [pylint](./reports/cleaned/cleaned_pylint_report.txt),
 [flake8](./reports/cleaned/cleaned_flake8_report.txt),
-[bandit](./reports/cleaned/cleaned_bandit_report.txt) 
+[bandit](./reports/cleaned/cleaned_bandit_report.txt)
 
 
 ## Reports
@@ -39,3 +39,34 @@ these 3 tools report no errors. [pylint](./reports/cleaned/cleaned_pylint_report
 - [cleaned pylint report](./reports/cleaned/cleaned_pylint_report.txt)
 - [cleaned flake8 report](./reports/cleaned/cleaned_flake8_report.txt)
 - [cleaned bandit report](./reports/cleaned/cleaned_bandit_report.txt)
+
+## Setup
+
+- Clone the repository
+```bash
+git clone https://github.com/nishantHolla/static-code-analysis.git
+cd  static-code-analysis/src
+```
+
+- Install pylint, flake8 and bandit
+```bash
+pip install pylint flake8 bandit
+```
+
+- Run program
+```bash
+python inventory_system.py
+python cleaned_inventory_system.py
+```
+
+- Generate reports
+```bash
+# Uncleaned
+pylint inventory_system.py > pylint_report.txt
+flake8 inventory_system.py > flake8_report.txt
+bandit -r inventory_system.py > bandit_report.txt
+# Cleaned
+pylint cleaned_inventory_system.py > pylint_report.txt
+flake8 cleaned_inventory_system.py > flake8_report.txt
+bandit -r cleaned_inventory_system.py > bandit_report.txt
+```
